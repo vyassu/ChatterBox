@@ -36,6 +36,15 @@ Then execute
 
 ## Get the code
 ```
-    $git clone 
+    $git clone "https://github.com/vyassu/ChatterBox"
     $cd ChatterBox
 ```
+
+## Test
+Currently ChatterBox supports two modes of operation encrypted and unencrypted mode. For encrypted mode it is necessary to install Public-Private keys both on your local system and as well as on the XMPP server. The below steps are for Encrypted mode of operation.
+```
+   $cd ChatterBox
+   $python XMPPSSLConn_Openfire.py -u <JID> -p password
+```
+After executing the above mentioned commands a command line interface appears follow the instructions to get connected to the XMPP chat server and to start sending messages.
+
