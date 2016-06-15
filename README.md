@@ -33,3 +33,9 @@ Then execute
 5.) Download and Install SleekXMPP from here --> https://github.com/fritzy/SleekXMPP
 
 ```
+
+## Get the code
+```
+    $git clone 
+    $cd ChatterBox
+```
