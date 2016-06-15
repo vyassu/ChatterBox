@@ -23,16 +23,16 @@ class XMPPConnMgr(sleekxmpp.ClientXMPP):
 
         if encryption:
             self.ca_certs = "/etc/ssl/certs/ca-certificates.crt"
-            self.certfile = "/home/vyassu/cert/Openfire/node0@localhost.crt"
-            self.keyfile = "/home/vyassu/cert/Openfire/node0@localhost.key"
+            self.certfile = "./"+jid+".crt"
+            self.keyfile = "./"+jid+".key"
         else:
             self['feature_mechanisms'].unencrypted_plain = True
         self.roaster = {}                                                   # Variable to store all friends/peer
         self.add_event_handler("session_start", self.start)                 # Registering event handler
 
     # Method to create connection to XMPP server
-    def conn(self,useTLS=True):
-        if conn.connect(("localhost", "6222"), use_tls=useTLS):
+    def conn(self,hostname="localhost",useTLS=True):
+        if conn.connect((hostname, "6222"), use_tls=useTLS):
             conn.process(block=False)
             print("Connection established....")
             print ("JID after connection:: ", conn.jid)
